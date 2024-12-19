@@ -1,0 +1,26 @@
+.homePage {
+  padding: 260px 805px 260px 64px;
+  background-image: url("../../assets/images/backGroundImage.jpg");
+  background-repeat:no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  font-weight: 600;
+  color: var(--inputs);
+}
+.mainHead {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+.secondHead {
+  font-size: 24px;
+  line-height: 1.33;
+  margin-bottom: 40px;
+}
+@media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .box {
+    background-image: url("../../assets/images/backGroundImage@2x");
+  }
+}
