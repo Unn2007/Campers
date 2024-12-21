@@ -2,24 +2,25 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const serchQuerySlice = createSlice({
   name: "filters",
-  initialState: {status:{
-    location: "",
-    ac: false,
-    bathroom: false,
-    kitchen: false,
-    tv: false,
-    radio: false,
-    refrigerator: false,
-    microwave: false,
-    gas: false,
-    water: false,
+  initialState: {
+    status: {
+      location: "",
+      ac: false,
+      bathroom: false,
+      kitchen: false,
+      tv: false,
+      radio: false,
+      refrigerator: false,
+      microwave: false,
+      gas: false,
+      water: false,
 
-    vehicleType: "",
-  }},
+      vehicleType: "",
+    },
+  },
   reducers: {
     setFilters(state, action) {
-       
-      state.status = {...action.payload};
+      state.status = { ...action.payload };
     },
   },
 });

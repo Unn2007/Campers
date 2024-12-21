@@ -6,8 +6,8 @@ export const AppBar = () => {
   return (
     <header className={css.header}>
       <div className={`${css.container} container`}>
-      <Icon width={136} height={16} href="icon-logo" className="iconLogo" />
-      <Navigation />
+        <Icon width={136} height={16} href="icon-logo" className="iconLogo" />
+        <Navigation />
       </div>
     </header>
   );

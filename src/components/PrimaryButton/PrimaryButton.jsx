@@ -1,7 +1,19 @@
-import css from './PrimaryButton.module.css'
+import css from "./PrimaryButton.module.css";
 
-export default function PrimaryButton({ children, type="button", handleClick }) {
-    return (
-      <button className={css.button} type={type} onClick={()=>{handleClick()}} >{children}</button>
-    );
-  }
+export default function PrimaryButton({
+  children,
+  type = "button",
+  handleClick,
+}) {
+  return (
+    <button
+      className={css.button}
+      type={type}
+      onClick={() => {
+        handleClick();
+      }}
+    >
+      {children}
+    </button>
+  );
+}

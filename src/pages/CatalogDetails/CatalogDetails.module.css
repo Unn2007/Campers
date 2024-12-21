@@ -1,0 +1,39 @@
+.header {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+  color: var(--main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price {
+  margin-right: 12px;
+  margin-left: auto;
+}
+
+.reviewsLocation {
+  display: flex;
+  margin-bottom: 24px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 16px;
+  color: var(--main);
+}
+.iconStar {
+  margin-right: 4px;
+}
+.rating {
+  margin-right: 16px;
+}
+.iconMap {
+  margin-right: 4px;
+}
+.description {
+  margin-bottom: 24px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 16px;
+  color: var(--text);
+}

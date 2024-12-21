@@ -69,7 +69,11 @@ export const CatalogForm = () => {
                 id={locationFieldId}
                 className={css.locationField}
               />
-              <ErrorMessage name="location" component="span" className={css.error} />
+              <ErrorMessage
+                name="location"
+                component="span"
+                className={css.error}
+              />
             </div>
           </label>
         </div>

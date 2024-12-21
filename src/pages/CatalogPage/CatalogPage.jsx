@@ -13,9 +13,9 @@ import {
   selectLimit,
 } from "../../redux/campers/selectors.js";
 import { selectFilters } from "../../redux/filters/selectors.js";
-import {selectIsLoading} from '../../redux/campers/selectors.js'
-import {removeFalsyValues,renameProperties} from '../../utils/utils.js'
-import {Loader} from '../../components/Loader/Loader.jsx'
+import { selectIsLoading } from "../../redux/campers/selectors.js";
+import { removeFalsyValues, renameProperties } from "../../utils/utils.js";
+import { Loader } from "../../components/Loader/Loader.jsx";
 import css from "./CatalogPage.module.css";
 
 export default function CatalogPage() {
@@ -31,7 +31,6 @@ export default function CatalogPage() {
       dispatch(setPage(newPage));
     }
   };
-  
 
   useEffect(() => {
     const trueValues = removeFalsyValues(filterValues);
@@ -40,12 +39,9 @@ export default function CatalogPage() {
       tv: "TV",
       vehicleType: "form",
     });
-    
-    
-      setSearchParams({ ...filter }),
-   
 
-    dispatch(getCampers({ page, limit, filters: filter  }));
+    setSearchParams({ ...filter }),
+      dispatch(getCampers({ page, limit, filters: filter }));
   }, [dispatch, filterValues, page, limit, setSearchParams]);
 
   return (

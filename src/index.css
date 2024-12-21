@@ -1,28 +1,28 @@
 @font-face {
   font-display: swap;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  src: url('./assets/fonts/Inter24pt-Regular.woff2') format('woff2');
+  src: url("./assets/fonts/Inter24pt-Regular.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 500;
-  src: url('./assets/fonts/Inter24pt-Medium.woff2') format('woff2');
+  src: url("./assets/fonts/Inter24pt-Medium.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 600;
-  src: url('./assets/fonts/Inter24pt-SemiBold.woff2') format('woff2');
+  src: url("./assets/fonts/Inter24pt-SemiBold.woff2") format("woff2");
 }
 
 :root {
-  --font-primary: 'Inter', sans-serif;
-    
+  --font-primary: "Inter", sans-serif;
+
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-semiBold: 600;
@@ -30,15 +30,10 @@
   --main: rgba(16, 24, 40, 1);
   --text: rgba(71, 84, 103, 1);
   --white: rgba(255, 255, 255, 1);
-  --inputs:rgba(247, 247, 247, 1);
-  --buttons:rgba(216, 67, 67, 1);
-  --buttons-hover:rgba(228, 72, 72, 1);
-  --rating:rgba(255, 197, 49, 1);
- 
-
-
-
-  
+  --inputs: rgba(247, 247, 247, 1);
+  --buttons: rgba(216, 67, 67, 1);
+  --buttons-hover: rgba(228, 72, 72, 1);
+  --rating: rgba(255, 197, 49, 1);
 }
 
 body {
@@ -60,11 +55,9 @@ h4,
 h5,
 h6 {
   margin: 0;
-  
 }
 p {
   margin: 0;
-  
 }
 ul,
 ol {
@@ -87,6 +80,4 @@ button {
   margin: 0;
   padding: 0;
   cursor: pointer;
-  
 }
-

@@ -1,5 +1,4 @@
 .camperItem {
-  
   display: flex;
   column-gap: 24px;
   padding: 24px;
@@ -22,8 +21,8 @@
 }
 
 .camperHeader {
- width: 525px;
-   display: flex;
+  width: 525px;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 8px;
@@ -38,17 +37,15 @@
   font-weight: 600;
   line-height: 1.33;
   color: var(--main);
-  white-space: nowrap;        
-  overflow: hidden;           
-  text-overflow: ellipsis; 
-  
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .buttonHeart {
   border: none;
   padding: 0px;
   background-color: transparent;
-  cursor:pointer;
-  
+  cursor: pointer;
 }
 .price {
   margin-right: 12px;
@@ -59,7 +56,7 @@
   display: flex;
   margin-bottom: 24px;
   padding-top: 4px;
- padding-bottom: 4px;
+  padding-bottom: 4px;
   font-size: 16px;
   color: var(--main);
 }
@@ -76,12 +73,12 @@
   max-width: 525px;
   margin-bottom: 24px;
   padding-top: 4px;
- padding-bottom: 4px;
+  padding-bottom: 4px;
   font-size: 16px;
   color: var(--text);
-  white-space: nowrap;        
-  overflow: hidden;           
-  text-overflow: ellipsis;  
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .equipmentList {
   max-width: 450px;
@@ -92,23 +89,17 @@
   gap: 8px;
   justify-content: flex-start;
   margin-bottom: 24px;
-
 }
 .equipment {
-
   flex: 0 0 auto;
- 
+
   display: flex;
   column-gap: 8px;
-  
+
   padding: 12px 18px;
   background-color: rgba(242, 244, 247, 1);
   border-radius: 100px;
- 
-  
-font-size: 16px;
-font-weight: 500;
 
-
-
+  font-size: 16px;
+  font-weight: 500;
 }

@@ -1,7 +1,6 @@
 .header .container {
-    display: flex;
-    justify-content: space-between;
-    padding: 28px 652px 28px 64px;
-    background-color: var(--inputs);
+  display: flex;
+  justify-content: space-between;
+  padding: 28px 652px 28px 64px;
+  background-color: var(--inputs);
 }
-

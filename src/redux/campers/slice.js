@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getCampers } from "./operations";
-import {removeStringFromArray} from "../../utils/utils.js"
+import { removeStringFromArray } from "../../utils/utils.js";
 
 const initialState = {
   items: [],
@@ -8,7 +8,7 @@ const initialState = {
   page: 1,
   limit: 4,
   isLoading: false,
-  isFavorite:[],
+  isFavorite: [],
   error: null,
 };
 const handlePending = (state) => {
@@ -24,13 +24,16 @@ const campersSlice = createSlice({
   initialState,
   reducers: {
     setPage(state, action) {
-      state.page = action.payload; 
+      state.page = action.payload;
     },
     setFavorite(state, action) {
-      state.isFavorite.push(action.payload); 
+      state.isFavorite.push(action.payload);
     },
     unSetFavorite(state, action) {
-      state.isFavorite=removeStringFromArray(state.isFavorite,action.payload); 
+      state.isFavorite = removeStringFromArray(
+        state.isFavorite,
+        action.payload
+      );
     },
   },
 
@@ -38,21 +41,15 @@ const campersSlice = createSlice({
     builder
       .addCase(getCampers.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        
+
         state.items = payload.items;
         state.total = payload.total;
       })
       .addCase(getCampers.pending, handlePending)
       .addCase(getCampers.rejected, handleRejected);
-    // .addCase(fetchMonthlyWaterEntries.pending, handlePending)
-    // .addCase(fetchMonthlyWaterEntries.rejected, handleRejected)
-    // .addCase(patchWaterEntry.pending, handlePending)
-    // .addCase(patchWaterEntry.rejected, handleRejected)
-    // .addCase(deleteWaterEntry.pending, handlePending)
-    // .addCase(deleteWaterEntry.rejected, handleRejected);
   },
 });
 export const { setPage } = campersSlice.actions;
 export const { setFavorite } = campersSlice.actions;
 export const { unSetFavorite } = campersSlice.actions;
-export const campersReducer= campersSlice.reducer;
+export const campersReducer = campersSlice.reducer;

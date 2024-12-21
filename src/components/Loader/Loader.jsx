@@ -1,5 +1,5 @@
-import css from './Loader.module.css';
-import { InfinitySpin } from 'react-loader-spinner';
+import css from "./Loader.module.css";
+import { InfinitySpin } from "react-loader-spinner";
 
 export const Loader = () => {
   return (
@@ -13,5 +13,3 @@ export const Loader = () => {
     </div>
   );
 };
-
-

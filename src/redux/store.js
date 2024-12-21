@@ -1,5 +1,5 @@
-import { configureStore } from '@reduxjs/toolkit';
-import {campersReducer} from './campers/slice.js';
+import { configureStore } from "@reduxjs/toolkit";
+import { campersReducer } from "./campers/slice.js";
 import { filtersReducer } from "./filters/slice.js";
 import {
   persistStore,
@@ -10,20 +10,19 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+} from "redux-persist";
+import storage from "redux-persist/lib/storage";
 
 const campersPersistConfig = {
   key: "campers",
   storage,
-  whitelist: ['isFavorite'],
+  whitelist: ["isFavorite"],
 };
 export const store = configureStore({
   reducer: {
     campers: persistReducer(campersPersistConfig, campersReducer),
-     
+
     filters: filtersReducer,
-   
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
@@ -31,10 +30,7 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
-  devTools: process.env.NODE_ENV === 'development',
+  devTools: process.env.NODE_ENV === "development",
 });
-
-
-
 
 export const persistor = persistStore(store);

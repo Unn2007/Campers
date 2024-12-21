@@ -10,13 +10,11 @@ export function renameProperties(obj, renames) {
   );
 }
 export function removeStringFromArray(array, stringToRemove) {
-  
   const index = array.indexOf(stringToRemove);
 
   if (index !== -1) {
-      array.splice(index, 1);
+    array.splice(index, 1);
   }
 
-  
   return array;
 }

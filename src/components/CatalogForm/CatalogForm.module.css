@@ -22,15 +22,14 @@ span {
   padding: 12px 20px;
   font-size: 14px;
   background-color: var(--buttons-hover);
-  color:var(--main);
+  color: var(--main);
 }
 .filtersContainer {
   margin-bottom: 32px;
 }
-.filters{
-  
+.filters {
   font-weight: 500;
- color:var(--text);
+  color: var(--text);
   margin-bottom: 32px;
 }
 
@@ -42,13 +41,11 @@ span {
   row-gap: 8px;
 }
 .filtersHeader {
- 
-font-size: 20px;
-font-weight: 600;
-line-height: 1.2;
-color:var(--main);
-margin-bottom: 48px;
-
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--main);
+  margin-bottom: 48px;
 }
 
 .equipmentLabel {
@@ -61,18 +58,17 @@ margin-bottom: 48px;
   row-gap: 8px;
   align-items: center;
   justify-content: center;
- 
-  border: 1px solid transparent;
-border-radius: 12px;
-font-weight: 500;
-color:var(--main);
-cursor: pointer;
 
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font-weight: 500;
+  color: var(--main);
+  cursor: pointer;
 }
 
 .equipmentLabel:has(input[type="checkbox"]:checked),
 .equipmentLabel:has(input[type="radio"]:checked) {
-  border-color:var(--buttons-hover); 
+  border-color: var(--buttons-hover);
 }
 
 .checkbox {
@@ -93,7 +89,7 @@ cursor: pointer;
   margin-bottom: 40px;
 }
 
-.text{
+.text {
   text-align: center;
 }
 .button {
