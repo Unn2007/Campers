@@ -1,13 +1,14 @@
 .homePage {
-  background-image: url("../../assets/images/backGroundImage.jpg");
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: cover;
+  
   font-weight: 600;
   color: var(--inputs);
 }
 .homePage .container {
   padding: 260px 805px 260px 64px;
+  background-image: url("../../assets/images/backGroundImage.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
 }
 .mainHead {
   font-size: 48px;
