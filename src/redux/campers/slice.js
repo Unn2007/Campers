@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getCampers } from "./operations";
+import {removeStringFromArray} from "../../utils/utils.js"
 
 const initialState = {
   items: [],
@@ -28,6 +29,9 @@ const campersSlice = createSlice({
     setFavorite(state, action) {
       state.isFavorite.push(action.payload); 
     },
+    unSetFavorite(state, action) {
+      state.isFavorite=removeStringFromArray(state.isFavorite,action.payload); 
+    },
   },
 
   extraReducers: (builder) => {
@@ -50,4 +54,5 @@ const campersSlice = createSlice({
 });
 export const { setPage } = campersSlice.actions;
 export const { setFavorite } = campersSlice.actions;
+export const { unSetFavorite } = campersSlice.actions;
 export const campersReducer= campersSlice.reducer;

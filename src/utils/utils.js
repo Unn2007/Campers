@@ -9,3 +9,14 @@ export function renameProperties(obj, renames) {
     Object.entries(obj).map(([key, value]) => [renames[key] || key, value])
   );
 }
+export function removeStringFromArray(array, stringToRemove) {
+  
+  const index = array.indexOf(stringToRemove);
+
+  if (index !== -1) {
+      array.splice(index, 1);
+  }
+
+  
+  return array;
+}

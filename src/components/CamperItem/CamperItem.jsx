@@ -2,7 +2,7 @@ import { Icon } from "../../components/Icon/Icon.jsx";
 import  PrimaryButton  from "../PrimaryButton/PrimaryButton.jsx";
 import {  useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
-import { setFavorite } from "../../redux/campers/slice.js";
+import { setFavorite,unSetFavorite } from "../../redux/campers/slice.js";
 import {selectIsFavorite} from '../../redux/campers/selectors.js'
 import {EquipmentItem} from '../EquipmentItem/EquipmentItem.jsx'
 import css from "./CamperItem.module.css";
@@ -33,7 +33,6 @@ const {
 } = data;
 const favoriteCampers=useSelector(selectIsFavorite);
 let isFavorite = favoriteCampers.includes(id);
-console.log(isFavorite)
 const imageLink=gallery[0].thumb;
 const reviewsNumber = reviews.length;
   const navigate = useNavigate();
@@ -42,7 +41,8 @@ const reviewsNumber = reviews.length;
     navigate(`${id}`);
   } 
   const heartClick = () => {
-dispatch(setFavorite(id));
+      if (!isFavorite) {dispatch(setFavorite(id))  }
+      else {dispatch(unSetFavorite(id))}
   }
   return (
     
