@@ -1,0 +1,108 @@
+.camperItem {
+  
+  display: flex;
+  column-gap: 24px;
+  padding: 24px;
+  border: 1px solid rgba(218, 221, 225, 1);
+  border-radius: 20px;
+  background-color: var(--white);
+}
+
+.image {
+  display: block;
+  width: 292px;
+  height: 320px;
+  border: none;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.camperData {
+  max-width: 525px;
+}
+
+.camperHeader {
+ width: 525px;
+   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+  color: var(--main);
+}
+
+.header {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+  color: var(--main);
+  white-space: nowrap;        
+  overflow: hidden;           
+  text-overflow: ellipsis; 
+  
+}
+
+.price {
+  margin-right: 12px;
+  margin-left: auto;
+}
+
+.reviewsLocation {
+  display: flex;
+  margin-bottom: 24px;
+  padding-top: 4px;
+ padding-bottom: 4px;
+  font-size: 16px;
+  color: var(--main);
+}
+.iconStar {
+  margin-right: 4px;
+}
+.rating {
+  margin-right: 16px;
+}
+.iconMap {
+  margin-right: 4px;
+}
+.description {
+  max-width: 525px;
+  margin-bottom: 24px;
+  padding-top: 4px;
+ padding-bottom: 4px;
+  font-size: 16px;
+  color: var(--text);
+  white-space: nowrap;        
+  overflow: hidden;           
+  text-overflow: ellipsis;  
+}
+.equipmentList {
+  max-width: 450px;
+  max-height: 104px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-start;
+  margin-bottom: 24px;
+
+}
+.equipment {
+
+  flex: 0 0 auto;
+ 
+  display: flex;
+  column-gap: 8px;
+  
+  padding: 12px 18px;
+  background-color: rgba(242, 244, 247, 1);
+  border-radius: 100px;
+ 
+  
+font-size: 16px;
+font-weight: 500;
+
+
+
+}
