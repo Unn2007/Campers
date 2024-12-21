@@ -7,6 +7,7 @@ const initialState = {
   page: 1,
   limit: 4,
   isLoading: false,
+  isFavorite:[],
   error: null,
 };
 const handlePending = (state) => {
@@ -23,6 +24,9 @@ const campersSlice = createSlice({
   reducers: {
     setPage(state, action) {
       state.page = action.payload; 
+    },
+    setFavorite(state, action) {
+      state.isFavorite.push(action.payload); 
     },
   },
 
@@ -45,4 +49,5 @@ const campersSlice = createSlice({
   },
 });
 export const { setPage } = campersSlice.actions;
+export const { setFavorite } = campersSlice.actions;
 export const campersReducer= campersSlice.reducer;

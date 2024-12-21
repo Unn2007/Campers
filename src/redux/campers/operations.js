@@ -8,6 +8,7 @@ export const instance = axios.create({
 export const getCampers = createAsyncThunk(
   "campers/getCampersList",
   async ({ page = 1, limit = 4, filters = {} }, thunkAPI) => {
+    
     try {
       const response = await instance.get("/campers", {
         params: {

@@ -1,6 +1,9 @@
 import { Icon } from "../../components/Icon/Icon.jsx";
 import  PrimaryButton  from "../PrimaryButton/PrimaryButton.jsx";
 import {  useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { setFavorite } from "../../redux/campers/slice.js";
+import {selectIsFavorite} from '../../redux/campers/selectors.js'
 import {EquipmentItem} from '../EquipmentItem/EquipmentItem.jsx'
 import css from "./CamperItem.module.css";
 
@@ -28,12 +31,19 @@ const {
   engine
 
 } = data;
+const favoriteCampers=useSelector(selectIsFavorite);
+let isFavorite = favoriteCampers.includes(id);
+console.log(isFavorite)
 const imageLink=gallery[0].thumb;
 const reviewsNumber = reviews.length;
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const buttonClick = ()=> {
     navigate(`${id}`);
   } 
+  const heartClick = () => {
+dispatch(setFavorite(id));
+  }
   return (
     
     <div className={css.camperItem}>
@@ -42,12 +52,15 @@ const reviewsNumber = reviews.length;
         <div className={css.camperHeader}>
           <h2 className={css.header}>{name}</h2>
           <p className={css.price}>{`\u20AC${price}.00`}</p>
+          <button className={css.buttonHeart} type="button" onClick={()=>{heartClick()}}>
           <Icon
             width={26}
             height={24}
             href="icon-heart"
             className="iconheart"
+            style={isFavorite ? { fill: "rgba(216, 67, 67, 1)" } : undefined}
           />
+          </button>
         </div>
         <div className={css.reviewsLocation}>
           <Icon width={16} height={16} href="icon-star" className={css.iconStar} />

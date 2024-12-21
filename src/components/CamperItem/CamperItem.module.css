@@ -43,7 +43,12 @@
   text-overflow: ellipsis; 
   
 }
-
+.buttonHeart {
+  border: none;
+  padding: 0px;
+  cursor:pointer;
+  
+}
 .price {
   margin-right: 12px;
   margin-left: auto;
