@@ -34,6 +34,8 @@
   --buttons: rgba(216, 67, 67, 1);
   --buttons-hover: rgba(228, 72, 72, 1);
   --rating: rgba(255, 197, 49, 1);
+  --gray-light:rgba(218, 221, 225, 1);
+  --gray:rgba(108, 113, 123, 1);
 }
 
 body {

@@ -83,7 +83,7 @@ export const CatalogForm = () => {
           <h3 className={css.filtersHeader}>Vehicle equipment</h3>
           <div className={css.filterWrapper}>
             <label htmlFor={acId} className={css.equipmentLabel}>
-              <Icon width={32} height={32} href="icon-ac"></Icon>
+              <Icon width={32} height={32} href="icon-aC"></Icon>
               <p>AC</p>
               <Field
                 type="checkbox"
@@ -160,7 +160,7 @@ export const CatalogForm = () => {
             </label>
 
             <label htmlFor={tvId} className={css.equipmentLabel}>
-              <Icon width={32} height={32} href="icon-tv"></Icon>
+              <Icon width={32} height={32} href="icon-tV"></Icon>
               <p>TV</p>
               <Field
                 type="checkbox"

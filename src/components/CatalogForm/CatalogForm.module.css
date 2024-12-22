@@ -18,11 +18,14 @@
   font-size: 16px;
   color: var(--main);
 }
-span {
+.error {
   padding: 12px 20px;
-  font-size: 14px;
-  background-color: var(--buttons-hover);
+  font-size: 16px;
+  font-weight: 600;
+  background-color: red;
+  border-radius: 20px;
   color: var(--main);
+  text-align: center;
 }
 .filtersContainer {
   margin-bottom: 32px;

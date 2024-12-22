@@ -6,7 +6,7 @@ import { setPage } from "../../redux/campers/slice.js";
 import DocumentTitle from "../../components/DocumentTitle.jsx";
 import { CamperList } from "../../components/CamperList/CamperList.jsx";
 import { CatalogForm } from "../../components/CatalogForm/CatalogForm.jsx";
-import { useMemo } from "react";
+
 import {
   selectPage,
   selectTotal,

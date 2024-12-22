@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setFavorite, unSetFavorite } from "../../redux/campers/slice.js";
 import { selectIsFavorite } from "../../redux/campers/selectors.js";
-import { EquipmentItem } from "../EquipmentItem/EquipmentItem.jsx";
+import { EquipmentList } from "../../components/EquipmentList/EquipmentList.jsx";
 import css from "./CamperItem.module.css";
 
 export const CamperItem = ({ data }) => {
@@ -17,17 +17,7 @@ export const CamperItem = ({ data }) => {
     reviews,
     location,
     description,
-    AC: acEquipment,
-    bathroom,
-    kitchen,
-    TV: tvEquipment,
-    radio,
-    refrigerator,
-    microwave,
-    gas,
-    water,
-    transmission,
-    engine,
+    
   } = data;
   const favoriteCampers = useSelector(selectIsFavorite);
   let isFavorite = favoriteCampers.includes(id);
@@ -85,114 +75,13 @@ export const CamperItem = ({ data }) => {
           <p>{`${location}`}</p>
         </div>
         <p className={css.description}>{`${description}`}</p>
-        <div className={css.equipmentList}>
-          <EquipmentItem
-            name={`${transmission}`}
+        <EquipmentList
+            item={data}
             className={css.equipment}
-            width={20}
-            height={20}
-            icon="icon-automatic"
             classNameIcon={css.equipmentIcon}
+            classNameList={css.equipmentList}
           />
-          <EquipmentItem
-            name={`${engine}`}
-            className={css.equipment}
-            width={20}
-            height={20}
-            icon="icon-petrol"
-            classNameIcon={css.equipmentIcon}
-          />
-          {acEquipment && (
-            <EquipmentItem
-              name="AC"
-              className={css.equipment}
-              width={20}
-              height={20}
-              icon="icon-ac"
-              classNameIcon={css.equipmentIcon}
-            />
-          )}
-          {bathroom && (
-            <EquipmentItem
-              name="Bathroom"
-              className={css.equipment}
-              width={20}
-              height={20}
-              icon="icon-bathroom"
-              classNameIcon={css.equipmentIcon}
-            />
-          )}
-          {kitchen && (
-            <EquipmentItem
-              name="Kitchen"
-              className={css.equipment}
-              width={20}
-              height={20}
-              icon="icon-kitchen"
-              classNameIcon={css.equipmentIcon}
-            />
-          )}
-          {radio && (
-            <EquipmentItem
-              name="Radio"
-              className={css.equipment}
-              width={20}
-              height={20}
-              icon="icon-radio"
-              classNameIcon={css.equipmentIcon}
-            />
-          )}
-          {refrigerator && (
-            <EquipmentItem
-              name="Refrigerator"
-              className={css.equipment}
-              width={20}
-              height={20}
-              icon="icon-refrigerator"
-              classNameIcon={css.equipmentIcon}
-            />
-          )}
-          {tvEquipment && (
-            <EquipmentItem
-              name="TV"
-              className={css.equipment}
-              width={20}
-              height={20}
-              icon="icon-tv"
-              classNameIcon={css.equipmentIcon}
-            />
-          )}
-          {microwave && (
-            <EquipmentItem
-              name="Microwave"
-              className={css.equipment}
-              width={20}
-              height={20}
-              icon="icon-microwave"
-              classNameIcon={css.equipmentIcon}
-            />
-          )}
-          {gas && (
-            <EquipmentItem
-              name="Gas"
-              className={css.equipment}
-              width={20}
-              height={20}
-              icon="icon-gas"
-              classNameIcon={css.equipmentIcon}
-            />
-          )}
-          {water && (
-            <EquipmentItem
-              name="Water"
-              className={css.equipment}
-              width={20}
-              height={20}
-              icon="icon-water"
-              classNameIcon={css.equipmentIcon}
-            />
-          )}
-        </div>
+        
 
         <PrimaryButton handleClick={buttonClick}>Show more</PrimaryButton>
       </div>

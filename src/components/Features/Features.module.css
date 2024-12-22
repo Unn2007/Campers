@@ -1,0 +1,37 @@
+.equipments {
+  margin-bottom: 100px;
+}
+
+
+.equipmentList {
+    
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-start;
+    margin-bottom: 24px;
+  }
+  .equipment {
+    flex: 0 0 auto;
+  
+    display: flex;
+    column-gap: 8px;
+  
+    padding: 12px 18px;
+    background-color: rgba(242, 244, 247, 1);
+    border-radius: 100px;
+  
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .header {
+
+   margin-bottom: 48px;
+font-size: 20px;
+font-weight: 600;
+line-height: 24px;
+color:var(--main);
+
+
+  }

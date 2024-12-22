@@ -1,21 +1,32 @@
+.container {
+  padding-top: 48px;
+  padding-bottom: 80px;
+}
+.mainInfo {
+  margin-bottom: 60px;
+}
 .header {
+  margin-bottom: 8px;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.33;
   color: var(--main);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+
 }
 
 .price {
-  margin-right: 12px;
-  margin-left: auto;
+  
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+ margin-bottom: 28px;
+  
+  
 }
 
 .reviewsLocation {
   display: flex;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   padding-top: 4px;
   padding-bottom: 4px;
   font-size: 16px;
@@ -30,10 +41,73 @@
 .iconMap {
   margin-right: 4px;
 }
+.gallery {
+  margin-bottom: 28px;
+}
+
 .description {
-  margin-bottom: 24px;
   padding-top: 4px;
   padding-bottom: 4px;
   font-size: 16px;
   color: var(--text);
+  
+}
+
+.linkList {
+  width: 1312px;
+  display: flex;
+  margin-bottom: 44px;
+  border-bottom: 1px solid var(--gray-light);
+}
+.linkListItem {
+  width: 85px;
+  padding-bottom: 24px;
+  
+  
+font-size: 20px;
+font-weight: 600;
+line-height: 1.2;
+color:var(--main);
+}
+
+.active {
+  border-bottom: 5px solid var(--buttons);
+}
+
+.linkListItem:first-child {
+  margin-right: 40px;
+}
+
+.techDetails {
+  max-width: 631px;
+  padding: 44px 52px;
+  
+}
+
+.formHeader {
+  
+font-size: 20px;
+font-weight: 600;
+line-height: 1.2;
+margin-bottom: 8px;
+
+
+} 
+
+.formText {
+ margin-bottom: 24px;
+font-size: 16px;
+color: var(--gray);
+
+}
+
+.wrapper {
+  display: flex;
+  column-gap: 40px;
+  
+}
+
+.form{
+  width: 641px;
+  padding: 44px 57px;
 }
