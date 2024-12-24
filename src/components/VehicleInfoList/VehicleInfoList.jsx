@@ -8,8 +8,8 @@ export const VehicleInfoList = ({ data }) => {
     <ul>
       {Object.keys(items).map((item) => {
         return (
-          <li key={item}>
-            <VehicleInfoItem property={item} value={items[item]} />
+          <li key={item} className={css.itemWrapper}>
+            <VehicleInfoItem property={item} value={items[item]}  />
           </li>
         );
       })}

@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { selectCamperList } from "../../redux/campers/selectors.js";
 import { Icon } from "../../components/Icon/Icon.jsx";
 import { GalleryList } from "../../components/GalleryList/GalleryList.jsx";
-import {BookingForm} from '../../components/BookingForm/BookingForm.jsx'
+import { BookingForm } from "../../components/BookingForm/BookingForm.jsx";
 
 import css from "./CatalogDetails.module.css";
 
@@ -91,8 +91,10 @@ export const CatalogDetails = () => {
           </div>
           <div className={css.form}>
             <h3 className={css.formHeader}>Book your campervan now</h3>
-            <p className={css.formText} >Stay connected! We are always ready to help you.</p>
-            <BookingForm/>
+            <p className={css.formText}>
+              Stay connected! We are always ready to help you.
+            </p>
+            <BookingForm />
           </div>
         </div>
       </section>
