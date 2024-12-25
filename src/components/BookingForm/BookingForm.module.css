@@ -15,7 +15,7 @@
 
   color: var(--gray);
   font-size: 16px;
-  color: var(--gray);
+  color:transparent;
 }
 .fieldInput {
   width: 527px;
@@ -36,13 +36,14 @@
   cursor: pointer;
 }
 
+
+
 .error {
-  padding: 12px 20px;
+ 
   font-size: 16px;
   font-weight: 600;
-  background-color: red;
-  border-radius: 20px;
-  color: var(--main);
+  
+  color: red;
   text-align: center;
 }
 
@@ -61,15 +62,20 @@
   background-color: transparent;
   border-color: var(--text);
   border-top-left-radius: 12px;
+  padding: 12px 0;
 }
 
 .customDatepicker {
-  outline: solid blue 2px;
+  outline: none;
 }
+
+/* :global(.react-datepicker-popper){
+  transform: translateX(100px) !important;
+} */
 
 :global(.react-datepicker) {
   border-color: var(--text);
-  background-color: transparent;
+  background-color: var(--white);
 }
 
 :global(.customCalendar) :global(.react-datepicker__current-month) {
@@ -78,6 +84,7 @@
   font-weight: 600;
   line-height: 1.2;
   color: var(--main);
+  margin-bottom: 12px;
 }
 
 :global(.react-datepicker__day-name) {
@@ -90,7 +97,7 @@
   text-transform: uppercase;
 }
 :global(.react-datepicker__day) {
-  width:32px;
+  width:36px;
   height: 32px;
   font-family: Inter;
   font-size: 14px;

@@ -14,6 +14,10 @@ const DateField = ({ field, form, ...props }) => {
           onChange={(val) => form.setFieldValue(field.name, val)}
           className={css.customDatepicker} 
           calendarClassName={"customCalendar"}
+          placeholderText="Booking date*"
+          popperPlacement="bottom"
+         
+          
       />
   );
 };
@@ -58,24 +62,24 @@ export const BookingForm = () => {
         <div className={css.formContainer}>
         <div className={css.fieldContainer}>
           <label htmlFor={nameFieldId} className={css.label}>Name*</label>
-          <Field type="text" name="username" id={nameFieldId} className={css.fieldInput} />
+          <Field type="text" name="username" id={nameFieldId} className={css.fieldInput}  placeholder="Name*" />
           <ErrorMessage name="username" component="span" className={css.error} />
         </div>
 
         <div className={css.fieldContainer}>
           <label htmlFor={emailFieldId} className={css.label}>Email*</label>
-          <Field type="email" name="email" id={emailFieldId} className={css.fieldInput} />
+          <Field type="email" name="email" id={emailFieldId} className={css.fieldInput} placeholder="Email*" />
           <ErrorMessage name="email" component="span" className={css.error} />
         </div>
         <div className={css.fieldContainer}>
           <label htmlFor={dateFieldId} className={css.label}>Booking date*</label>
-          <Field name="date" id={dateFieldId} className={css.fieldInput} component={DateField} />
+          <Field name="date" id={dateFieldId} className={css.fieldInput} component={DateField}  />
           <ErrorMessage name="date" component="span" className={css.error} />
         </div>
 
         <div className={css.fieldContainer}>
           <label htmlFor={msgFieldId} className={css.label}>Comment</label>
-          <Field as="textarea" name="message" id={msgFieldId} rows="5" className={css.fieldInput} />
+          <Field as="textarea" name="message" id={msgFieldId} rows="5" className={css.fieldInput} placeholder="Comment" />
           <ErrorMessage name="message" component="span" className={css.error} />
         </div>
 
