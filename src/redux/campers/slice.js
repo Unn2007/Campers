@@ -42,8 +42,9 @@ const campersSlice = createSlice({
       .addCase(getCampers.fulfilled, (state, { payload }) => {
         state.isLoading = false;
 
-        state.items = payload.items;
+        state.items.push(...payload.items);
         state.total = payload.total;
+        console.log(state.total);
       })
       .addCase(getCampers.pending, handlePending)
       .addCase(getCampers.rejected, handleRejected);

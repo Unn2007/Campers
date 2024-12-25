@@ -40,7 +40,12 @@ export default function CatalogPage() {
       vehicleType: "form",
     });
 
-    setSearchParams({ ...filter }),
+    if (JSON.stringify(Object.fromEntries(searchParams)) !== JSON.stringify(filter)) {
+      setSearchParams({ ...filter });
+    }
+    console.log('Filters:', filterValues);
+  console.log('Page:', page);
+  console.log('Limit:', limit);
       dispatch(getCampers({ page, limit, filters: filter }));
   }, [dispatch, filterValues, page, limit, setSearchParams]);
 

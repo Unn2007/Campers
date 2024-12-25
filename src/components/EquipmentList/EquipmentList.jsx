@@ -41,7 +41,7 @@ export const EquipmentList = ({
         let nameEqipment =
           typeof equipments[item] !== "boolean" ? equipments[item] : item;
 
-        console.log(typeof equipments[item] !== "boolean");
+
 
         return (
           !!equipments[item] && (
