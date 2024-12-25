@@ -43,8 +43,12 @@ const campersSlice = createSlice({
         state.isLoading = false;
 
         state.items.push(...payload.items);
-        state.total = payload.total;
-        console.log(state.total);
+        if (state.total !== payload.total) {
+          state.total = payload.total;
+          
+        }
+       
+       
       })
       .addCase(getCampers.pending, handlePending)
       .addCase(getCampers.rejected, handleRejected);

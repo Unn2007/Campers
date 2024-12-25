@@ -26,6 +26,7 @@ export default function CatalogPage() {
   const limit = useSelector(selectLimit);
   const filterValues = useSelector(selectFilters);
   const isLoading = useSelector(selectIsLoading);
+  let isLoadMore= !(page === Math.ceil(total / limit));
   const handlePageChange = (newPage) => {
     if (newPage > 0 && newPage <= Math.ceil(total / limit)) {
       dispatch(setPage(newPage));
@@ -40,13 +41,15 @@ export default function CatalogPage() {
       vehicleType: "form",
     });
 
-    if (JSON.stringify(Object.fromEntries(searchParams)) !== JSON.stringify(filter)) {
+    if (
+      JSON.stringify(Object.fromEntries(searchParams)) !==
+      JSON.stringify(filter)
+    ) {
       setSearchParams({ ...filter });
+      console.log("setSearchParams");
     }
-    console.log('Filters:', filterValues);
-  console.log('Page:', page);
-  console.log('Limit:', limit);
-      dispatch(getCampers({ page, limit, filters: filter }));
+
+    dispatch(getCampers({ page, limit, filters: filter }));
   }, [dispatch, filterValues, page, limit, setSearchParams]);
 
   return (
@@ -56,7 +59,7 @@ export default function CatalogPage() {
       <CatalogForm></CatalogForm>
       <div className={css.wrapper}>
         <CamperList></CamperList>
-        <button
+        {isLoadMore&&<button
           className={css.button}
           type="button"
           onClick={() => {
@@ -65,7 +68,7 @@ export default function CatalogPage() {
           disabled={page === Math.ceil(total / limit)}
         >
           Load more
-        </button>
+          </button>}
       </div>
     </div>
   );
