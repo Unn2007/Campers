@@ -23,3 +23,10 @@ export function capitalizeFirstLetter(string) {
   if (!string) return string; 
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+export function getFirstLetter(string) {
+  if (typeof string === 'string' && string.length > 0) {
+    return string[0];
+  }
+  return null;
+}
