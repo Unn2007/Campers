@@ -24,7 +24,7 @@ const campersSlice = createSlice({
   initialState,
   reducers: {
     setPage(state, action) {
-      state.page = action.payload;
+     state.page = action.payload;
     },
     setFavorite(state, action) {
       state.isFavorite.push(action.payload);
@@ -35,6 +35,7 @@ const campersSlice = createSlice({
         action.payload
       );
     },
+    
   },
 
   extraReducers: (builder) => {
@@ -54,6 +55,7 @@ const campersSlice = createSlice({
       .addCase(getCampers.rejected, handleRejected);
   },
 });
+
 export const { setPage } = campersSlice.actions;
 export const { setFavorite } = campersSlice.actions;
 export const { unSetFavorite } = campersSlice.actions;

@@ -45,6 +45,7 @@ export const CatalogForm = () => {
   const panelTruck = useId();
   const dispatch = useDispatch();
   const handleSubmit = (values, actions) => {
+  
     dispatch(setPage(1));
     dispatch(setFilters(values));
 

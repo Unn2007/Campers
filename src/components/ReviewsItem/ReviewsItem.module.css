@@ -1,0 +1,33 @@
+.comentatorInfo {
+    display: flex;
+    column-gap: 37px;
+    margin-bottom: 24px;
+}
+
+.avatar {
+    
+font-size: 24px;
+font-weight: 600;
+line-height: 1.33;
+color: var(--buttons);
+
+}
+
+.name {
+   
+font-size: 16px;
+font-weight: 500;
+color:var(--main);
+margin-bottom: 4px;
+
+
+}
+
+.text {
+   
+font-size: 16px;
+line-height: 1.5;
+color: var(--text);
+
+
+}

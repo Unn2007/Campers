@@ -34,6 +34,13 @@ export default function CatalogPage() {
   };
 
   useEffect(() => {
+   
+    dispatch(getCampers({}));
+  }, []);
+  
+
+
+  useEffect(() => {
     const trueValues = removeFalsyValues(filterValues);
     const filter = renameProperties(trueValues, {
       ac: "AC",
@@ -46,10 +53,11 @@ export default function CatalogPage() {
       JSON.stringify(filter)
     ) {
       setSearchParams({ ...filter });
-      console.log("setSearchParams");
+      
     }
-
+    if ((page>1)||(Object.keys(filter).length>0)) {
     dispatch(getCampers({ page, limit, filters: filter }));
+    }
   }, [dispatch, filterValues, page, limit, setSearchParams]);
 
   return (
