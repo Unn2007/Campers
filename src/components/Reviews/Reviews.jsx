@@ -1,4 +1,12 @@
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectCamperList } from "../../redux/campers/selectors.js";
 export default function Reviews() {
+  const { id } = useParams();
+  const campers = useSelector(selectCamperList);
+  const camperData = campers.find((camper) => camper.id === id);
+  const reviews= camperData.reviews;
+  console.log(reviews);
   return (
     <section>
       <div>
