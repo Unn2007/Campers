@@ -41,7 +41,7 @@ export const CamperItem = ({ data }) => {
       <div className={css.camperData}>
         <div className={css.camperHeader}>
           <h2 className={css.header}>{name}</h2>
-          <p className={css.price}>{`\u20AC${price}.00`}</p>
+          <p className={css.price}>{`${(+price).toFixed(2)}`}</p>
           <button
             className={css.buttonHeart}
             type="button"
