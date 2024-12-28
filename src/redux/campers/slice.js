@@ -35,6 +35,9 @@ const campersSlice = createSlice({
         action.payload
       );
     },
+    clearItems(state, action) {
+      state.items = [];
+     },
     
   },
 
@@ -55,7 +58,7 @@ const campersSlice = createSlice({
       .addCase(getCampers.rejected, handleRejected);
   },
 });
-
+export const { clearItems } = campersSlice.actions;
 export const { setPage } = campersSlice.actions;
 export const { setFavorite } = campersSlice.actions;
 export const { unSetFavorite } = campersSlice.actions;

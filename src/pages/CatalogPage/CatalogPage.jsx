@@ -11,6 +11,7 @@ import {
   selectPage,
   selectTotal,
   selectLimit,
+  selectCamperList,
 } from "../../redux/campers/selectors.js";
 import { selectFilters } from "../../redux/filters/selectors.js";
 import { selectIsLoading } from "../../redux/campers/selectors.js";
@@ -26,7 +27,14 @@ export default function CatalogPage() {
   const limit = useSelector(selectLimit);
   const filterValues = useSelector(selectFilters);
   const isLoading = useSelector(selectIsLoading);
-  let isLoadMore= !(page === Math.ceil(total / limit));
+  const campers = useSelector(selectCamperList);
+  let isLoadMore = !(page === Math.ceil(total / limit));
+  const trueValues = removeFalsyValues(filterValues);
+  const filter = renameProperties(trueValues, {
+    ac: "AC",
+    tv: "TV",
+    vehicleType: "form",
+  });
   const handlePageChange = (newPage) => {
     if (newPage > 0 && newPage <= Math.ceil(total / limit)) {
       dispatch(setPage(newPage));
@@ -34,31 +42,25 @@ export default function CatalogPage() {
   };
 
   useEffect(() => {
-   
-    dispatch(getCampers({}));
-  }, []);
-  
-
-
-  useEffect(() => {
-    const trueValues = removeFalsyValues(filterValues);
-    const filter = renameProperties(trueValues, {
-      ac: "AC",
-      tv: "TV",
-      vehicleType: "form",
-    });
-
     if (
       JSON.stringify(Object.fromEntries(searchParams)) !==
       JSON.stringify(filter)
     ) {
       setSearchParams({ ...filter });
-      
     }
-    if ((page>1)||(Object.keys(filter).length>0)) {
-    dispatch(getCampers({ page, limit, filters: filter }));
+    if (Object.keys(filter).length > 0) {
+      dispatch(getCampers({ page, limit, filters: filter }));
     }
-  }, [dispatch, filterValues, page, limit, setSearchParams]);
+    if (campers.length === 0 && Object.keys(filter).length === 0) {
+      dispatch(getCampers({}));
+    }
+  }, [dispatch, filterValues]);
+
+  useEffect(() => {
+    if (page > 1) {
+      dispatch(getCampers({ page, limit, filters: filter }));
+    }
+  }, [dispatch, page, limit]);
 
   return (
     <div className={`${css.container} container`}>
@@ -67,16 +69,18 @@ export default function CatalogPage() {
       <CatalogForm></CatalogForm>
       <div className={css.wrapper}>
         <CamperList></CamperList>
-        {isLoadMore&&<button
-          className={css.button}
-          type="button"
-          onClick={() => {
-            handlePageChange(page + 1);
-          }}
-          disabled={page === Math.ceil(total / limit)}
-        >
-          Load more
-          </button>}
+        {isLoadMore && (
+          <button
+            className={css.button}
+            type="button"
+            onClick={() => {
+              handlePageChange(page + 1);
+            }}
+            disabled={page === Math.ceil(total / limit)}
+          >
+            Load more
+          </button>
+        )}
       </div>
     </div>
   );

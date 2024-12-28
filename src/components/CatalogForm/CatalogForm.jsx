@@ -2,7 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useId } from "react";
 import { useDispatch } from "react-redux";
 import { setFilters } from "../../redux/filters/slice.js";
-import { setPage } from "../../redux/campers/slice.js";
+import { setPage,clearItems } from "../../redux/campers/slice.js";
 import { Icon } from "../../components/Icon/Icon.jsx";
 import css from "./CatalogForm.module.css";
 import * as Yup from "yup";
@@ -45,11 +45,11 @@ export const CatalogForm = () => {
   const panelTruck = useId();
   const dispatch = useDispatch();
   const handleSubmit = (values, actions) => {
-  
+    dispatch(clearItems());
     dispatch(setPage(1));
     dispatch(setFilters(values));
 
-    actions.resetForm();
+    
   };
 
   return (
