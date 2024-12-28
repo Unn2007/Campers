@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css'; 
 import css from "./BookingForm.module.css";
+import  toast, { Toaster }  from "react-hot-toast";
 
 const DateField = ({ field, form, ...props }) => {
   return (
@@ -48,7 +49,14 @@ export const BookingForm = () => {
   const dateFieldId = useId();
 
   const handleSubmit = (values, actions) => {
-    console.log(values);
+    if (values) {
+      console.log("ok")
+      toast.success("Successfully booked", {
+        duration: 2000,
+        position: "top-center",
+      });
+    }
+    
     actions.resetForm();
   };
 
@@ -84,6 +92,7 @@ export const BookingForm = () => {
         </div>
 
         <button type="submit" className={css.button}>Submit</button>
+        <Toaster />
         </div>
       </Form>
     </Formik>
