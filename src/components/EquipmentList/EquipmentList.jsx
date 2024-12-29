@@ -41,8 +41,6 @@ export const EquipmentList = ({
         let nameEqipment =
           typeof equipments[item] !== "boolean" ? equipments[item] : item;
 
-
-
         return (
           !!equipments[item] && (
             <li key={item}>

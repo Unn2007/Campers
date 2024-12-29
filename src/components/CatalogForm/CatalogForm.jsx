@@ -2,8 +2,9 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useId } from "react";
 import { useDispatch } from "react-redux";
 import { setFilters } from "../../redux/filters/slice.js";
-import { setPage,clearItems } from "../../redux/campers/slice.js";
+import { setPage, clearItems } from "../../redux/campers/slice.js";
 import { Icon } from "../../components/Icon/Icon.jsx";
+import { VehicleEquipmentList } from "../../components/VehicleEquipmentList/VehicleEquipmentList.jsx";
 import css from "./CatalogForm.module.css";
 import * as Yup from "yup";
 
@@ -16,10 +17,10 @@ const FeedbackSchema = Yup.object().shape({
 
 const initialValues = {
   location: "",
-  ac: false,
+  aC: false,
   bathroom: false,
   kitchen: false,
-  tv: false,
+  tV: false,
   radio: false,
   refrigerator: false,
   microwave: false,
@@ -30,15 +31,7 @@ const initialValues = {
 
 export const CatalogForm = () => {
   const locationFieldId = useId();
-  const acId = useId();
-  const bathroomId = useId();
-  const kitchenId = useId();
-  const tvId = useId();
-  const radioId = useId();
-  const refrigeratorId = useId();
-  const microwaveId = useId();
-  const gasId = useId();
-  const waterId = useId();
+
   const alcoveId = useId();
   const vanId = useId();
   const fullyIntId = useId();
@@ -48,8 +41,6 @@ export const CatalogForm = () => {
     dispatch(clearItems());
     dispatch(setPage(1));
     dispatch(setFilters(values));
-
-    
   };
 
   return (
@@ -82,106 +73,12 @@ export const CatalogForm = () => {
 
         <div className={css.filtersContainer}>
           <h3 className={css.filtersHeader}>Vehicle equipment</h3>
-          <div className={css.filterWrapper}>
-            <label htmlFor={acId} className={css.equipmentLabel}>
-              <Icon width={32} height={32} href="icon-aC"></Icon>
-              <p>AC</p>
-              <Field
-                type="checkbox"
-                name="ac"
-                id={acId}
-                className={css.checkbox}
-              />
-            </label>
-
-            <label htmlFor={bathroomId} className={css.equipmentLabel}>
-              <Icon width={32} height={32} href="icon-bathroom"></Icon>
-              <p>Bathroom</p>
-              <Field
-                type="checkbox"
-                name="bathroom"
-                id={bathroomId}
-                className={css.checkbox}
-              />
-            </label>
-
-            <label htmlFor={kitchenId} className={css.equipmentLabel}>
-              <Icon width={32} height={32} href="icon-kitchen"></Icon>
-              <p>Kitchen</p>
-              <Field
-                type="checkbox"
-                name="kitchen"
-                id={kitchenId}
-                className={css.checkbox}
-              />
-            </label>
-
-            <label htmlFor={radioId} className={css.equipmentLabel}>
-              <Icon width={32} height={32} href="icon-radio"></Icon>
-              <p>Radio</p>
-              <Field
-                type="checkbox"
-                name="radio"
-                id={radioId}
-                className={css.checkbox}
-              />
-            </label>
-
-            <label htmlFor={refrigeratorId} className={css.equipmentLabel}>
-              <Icon width={32} height={32} href="icon-refrigerator"></Icon>
-              <p>Refrigerator</p>
-              <Field
-                type="checkbox"
-                name="refrigerator"
-                id={refrigeratorId}
-                className={css.checkbox}
-              />
-            </label>
-
-            <label htmlFor={microwaveId} className={css.equipmentLabel}>
-              <Icon width={32} height={32} href="icon-microwave"></Icon>
-              <p>Microwave</p>
-              <Field
-                type="checkbox"
-                name="microwave"
-                id={microwaveId}
-                className={css.checkbox}
-              />
-            </label>
-
-            <label htmlFor={gasId} className={css.equipmentLabel}>
-              <Icon width={32} height={32} href="icon-gas"></Icon>
-              <p>Gas</p>
-              <Field
-                type="checkbox"
-                name="gas"
-                id={gasId}
-                className={css.checkbox}
-              />
-            </label>
-
-            <label htmlFor={tvId} className={css.equipmentLabel}>
-              <Icon width={32} height={32} href="icon-tV"></Icon>
-              <p>TV</p>
-              <Field
-                type="checkbox"
-                name="tv"
-                id={tvId}
-                className={css.checkbox}
-              />
-            </label>
-
-            <label htmlFor={waterId} className={css.equipmentLabel}>
-              <Icon width={32} height={32} href="icon-water"></Icon>
-              <p>Water</p>
-              <Field
-                type="checkbox"
-                name="water"
-                id={waterId}
-                className={css.checkbox}
-              />
-            </label>
-          </div>
+          <VehicleEquipmentList
+            items={initialValues}
+            className={css.equipmentLabel}
+            classNameList={css.filterWrapper}
+            classNameCheckBox={css.checkbox}
+          />
         </div>
         <div className={css.formContainer}>
           <h3 className={css.filtersHeader}>Vehicle type</h3>
@@ -231,3 +128,106 @@ export const CatalogForm = () => {
     </Formik>
   );
 };
+
+{
+  /* <div className={css.filterWrapper}>
+<label htmlFor={acId} className={css.equipmentLabel}>
+  <Icon width={32} height={32} href="icon-aC"></Icon>
+  <p>AC</p>
+  <Field
+    type="checkbox"
+    name="ac"
+    id={acId}
+    className={css.checkbox}
+  />
+</label>
+
+<label htmlFor={bathroomId} className={css.equipmentLabel}>
+  <Icon width={32} height={32} href="icon-bathroom"></Icon>
+  <p>Bathroom</p>
+  <Field
+    type="checkbox"
+    name="bathroom"
+    id={bathroomId}
+    className={css.checkbox}
+  />
+</label>
+
+<label htmlFor={kitchenId} className={css.equipmentLabel}>
+  <Icon width={32} height={32} href="icon-kitchen"></Icon>
+  <p>Kitchen</p>
+  <Field
+    type="checkbox"
+    name="kitchen"
+    id={kitchenId}
+    className={css.checkbox}
+  />
+</label>
+
+<label htmlFor={radioId} className={css.equipmentLabel}>
+  <Icon width={32} height={32} href="icon-radio"></Icon>
+  <p>Radio</p>
+  <Field
+    type="checkbox"
+    name="radio"
+    id={radioId}
+    className={css.checkbox}
+  />
+</label>
+
+<label htmlFor={refrigeratorId} className={css.equipmentLabel}>
+  <Icon width={32} height={32} href="icon-refrigerator"></Icon>
+  <p>Refrigerator</p>
+  <Field
+    type="checkbox"
+    name="refrigerator"
+    id={refrigeratorId}
+    className={css.checkbox}
+  />
+</label>
+
+<label htmlFor={microwaveId} className={css.equipmentLabel}>
+  <Icon width={32} height={32} href="icon-microwave"></Icon>
+  <p>Microwave</p>
+  <Field
+    type="checkbox"
+    name="microwave"
+    id={microwaveId}
+    className={css.checkbox}
+  />
+</label>
+
+<label htmlFor={gasId} className={css.equipmentLabel}>
+  <Icon width={32} height={32} href="icon-gas"></Icon>
+  <p>Gas</p>
+  <Field
+    type="checkbox"
+    name="gas"
+    id={gasId}
+    className={css.checkbox}
+  />
+</label>
+
+<label htmlFor={tvId} className={css.equipmentLabel}>
+  <Icon width={32} height={32} href="icon-tV"></Icon>
+  <p>TV</p>
+  <Field
+    type="checkbox"
+    name="tv"
+    id={tvId}
+    className={css.checkbox}
+  />
+</label>
+
+<label htmlFor={waterId} className={css.equipmentLabel}>
+  <Icon width={32} height={32} href="icon-water"></Icon>
+  <p>Water</p>
+  <Field
+    type="checkbox"
+    name="water"
+    id={waterId}
+    className={css.checkbox}
+  />
+</label>
+</div> */
+}

@@ -1,4 +1,4 @@
-import {VehicleInfoItem} from "../../components/VehicleInfoItem/VehicleInfoItem.jsx";
+import { VehicleInfoItem } from "../../components/VehicleInfoItem/VehicleInfoItem.jsx";
 import css from "./VehicleInfoList.module.css";
 
 export const VehicleInfoList = ({ data }) => {
@@ -9,7 +9,7 @@ export const VehicleInfoList = ({ data }) => {
       {Object.keys(items).map((item) => {
         return (
           <li key={item} className={css.itemWrapper}>
-            <VehicleInfoItem property={item} value={items[item]}  />
+            <VehicleInfoItem property={item} value={items[item]} />
           </li>
         );
       })}

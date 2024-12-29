@@ -31,8 +31,8 @@ export default function CatalogPage() {
   let isLoadMore = !(page === Math.ceil(total / limit));
   const trueValues = removeFalsyValues(filterValues);
   const filter = renameProperties(trueValues, {
-    ac: "AC",
-    tv: "TV",
+    aC: "AC",
+    tV: "TV",
     vehicleType: "form",
   });
   const handlePageChange = (newPage) => {
