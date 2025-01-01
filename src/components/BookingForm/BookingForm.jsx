@@ -50,7 +50,7 @@ export const BookingForm = () => {
 
   const handleSubmit = (values, actions) => {
     if (values) {
-      console.log("ok")
+      
       toast.success("Successfully booked", {
         duration: 2000,
         position: "top-center",
@@ -87,7 +87,7 @@ export const BookingForm = () => {
 
         <div className={css.fieldContainer}>
           <label htmlFor={msgFieldId} className={css.label}>Comment</label>
-          <Field as="textarea" name="message" id={msgFieldId} rows="5" className={css.fieldInput} placeholder="Comment" />
+          <Field as="textarea" name="message" id={msgFieldId} rows="5" className={css.fieldInput} placeholder="Comment"/>
           <ErrorMessage name="message" component="span" className={css.error} />
         </div>
 

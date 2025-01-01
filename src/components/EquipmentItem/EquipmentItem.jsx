@@ -1,4 +1,6 @@
 import { Icon } from "../Icon/Icon.jsx";
+import css from './EquipmentItem.module.css'
+
 export const EquipmentItem = ({
   name,
   className,
@@ -15,7 +17,7 @@ export const EquipmentItem = ({
         href={icon}
         className={classNameIcon}
       />
-      <p>{name}</p>
+      <p className={css.name}>{name}</p>
     </div>
   );
 };

@@ -6,6 +6,8 @@ import { setPage } from "../../redux/campers/slice.js";
 import DocumentTitle from "../../components/DocumentTitle.jsx";
 import { CamperList } from "../../components/CamperList/CamperList.jsx";
 import { CatalogForm } from "../../components/CatalogForm/CatalogForm.jsx";
+import  toast, { Toaster }  from "react-hot-toast";
+
 
 import {
   selectPage,
@@ -28,7 +30,8 @@ export default function CatalogPage() {
   const filterValues = useSelector(selectFilters);
   const isLoading = useSelector(selectIsLoading);
   const campers = useSelector(selectCamperList);
-  let isLoadMore = !(page === Math.ceil(total / limit));
+  const isNothingFind = campers.length===0
+  let isLoadMore = (!(page === Math.ceil(total / limit)))&&(!isNothingFind);
   const trueValues = removeFalsyValues(filterValues);
   const filter = renameProperties(trueValues, {
     aC: "AC",
@@ -50,6 +53,12 @@ export default function CatalogPage() {
     }
     if (Object.keys(filter).length > 0) {
       dispatch(getCampers({ page, limit, filters: filter }));
+      if (isNothingFind) {
+        toast.error("Nothing find", {
+          duration: 2000,
+          position: "top-right",
+        });
+      }
     }
     if (campers.length === 0 && Object.keys(filter).length === 0) {
       dispatch(getCampers({}));
@@ -65,6 +74,7 @@ export default function CatalogPage() {
   return (
     <div className={`${css.container} container`}>
       <DocumentTitle>Catalog</DocumentTitle>
+      <Toaster />
       {isLoading && <Loader />}
       <CatalogForm></CatalogForm>
       <div className={css.wrapper}>
@@ -76,7 +86,7 @@ export default function CatalogPage() {
             onClick={() => {
               handlePageChange(page + 1);
             }}
-            disabled={page === Math.ceil(total / limit)}
+            
           >
             Load more
           </button>

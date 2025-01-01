@@ -21,26 +21,8 @@ export const CatalogDetails = () => {
   const { id } = useParams();
   const campers = useSelector(selectCamperList);
   const camperData = campers.find((camper) => camper.id === id);
-  const {
-    gallery,
-    name,
-    price,
-    rating,
-    reviews,
-    location,
-    description,
-    AC: acEquipment,
-    bathroom,
-    kitchen,
-    TV: tvEquipment,
-    radio,
-    refrigerator,
-    microwave,
-    gas,
-    water,
-    transmission,
-    engine,
-  } = camperData;
+  const { gallery, name, price, rating, reviews, location, description } =
+    camperData;
   const reviewsNumber = reviews.length;
   useEffect(() => {
     navigate("features");

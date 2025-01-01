@@ -5,6 +5,7 @@ import { setFilters } from "../../redux/filters/slice.js";
 import { setPage, clearItems } from "../../redux/campers/slice.js";
 import { Icon } from "../../components/Icon/Icon.jsx";
 import { VehicleEquipmentList } from "../../components/VehicleEquipmentList/VehicleEquipmentList.jsx";
+import {FormVariantsList} from "../../components/FormVariantsList/FormVariantsList.jsx"
 import css from "./CatalogForm.module.css";
 import * as Yup from "yup";
 
@@ -83,47 +84,23 @@ export const CatalogForm = () => {
         <div className={css.formContainer}>
           <h3 className={css.filtersHeader}>Vehicle type</h3>
           <div className={css.filterWrapper}>
-            <label htmlFor={alcoveId} className={css.equipmentLabel}>
-              <Icon width={32} height={32} href="icon-bi_grid-3x3-gap"></Icon>
-              <p>Alcove</p>
-              <Field
-                type="radio"
-                name="vehicleType"
-                id={alcoveId}
-                value="alcove"
-                className={css.checkbox}
-              />
-            </label>
-
-            <label htmlFor={vanId} className={css.equipmentLabel}>
-              <Icon width={32} height={32} href="icon-bi_grid-1x2"></Icon>
-              <p>Van</p>
-              <Field
-                type="radio"
-                name="vehicleType"
-                id={vanId}
-                value="van"
-                className={css.checkbox}
-              />
-            </label>
-
-            <label htmlFor={fullyIntId} className={css.equipmentLabel}>
-              <Icon width={32} height={32} href="icon-bi_grid"></Icon>
-              <p className={css.text}>Fully Integrated</p>
-              <Field
-                type="radio"
-                name="vehicleType"
-                id={fullyIntId}
-                value="fullyIntegrated"
-                className={css.checkbox}
-              />
-            </label>
+            
+            <FormVariantsList
+            items={["alcove","van","fullyIntegrated"]}
+            className={css.equipmentLabel}
+            classNameList={css.filterWrapper}
+            classNameCheckBox={css.checkbox}
+          />
           </div>
         </div>
-
+        <div className={css.buttonContainer}>
         <button type="submit" className={css.button}>
           Search
         </button>
+        <button type="reset" className={css.button}>
+           Clear
+        </button>
+        </div>
       </Form>
     </Formik>
   );
@@ -231,3 +208,40 @@ export const CatalogForm = () => {
 </label>
 </div> */
 }
+
+
+{/* <label htmlFor={alcoveId} className={css.equipmentLabel}>
+              <Icon width={32} height={32} href="icon-alcove"></Icon>
+              <p>Alcove</p>
+              <Field
+                type="radio"
+                name="vehicleType"
+                id={alcoveId}
+                value="alcove"
+                className={css.checkbox}
+              />
+            </label>
+
+            <label htmlFor={vanId} className={css.equipmentLabel}>
+              <Icon width={32} height={32} href="icon-van"></Icon>
+              <p>Van</p>
+              <Field
+                type="radio"
+                name="vehicleType"
+                id={vanId}
+                value="van"
+                className={css.checkbox}
+              />
+            </label>
+
+            <label htmlFor={fullyIntId} className={css.equipmentLabel}>
+              <Icon width={32} height={32} href="icon-fullyIntegrated"></Icon>
+              <p className={css.text}>Fully Integrated</p>
+              <Field
+                type="radio"
+                name="vehicleType"
+                id={fullyIntId}
+                value="fullyIntegrated"
+                className={css.checkbox}
+              />
+            </label> */}
