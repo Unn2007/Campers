@@ -53,7 +53,6 @@ export default function CatalogPage() {
     }
     if (Object.keys(filter).length > 0) {
       dispatch(getCampers({ page, limit, filters: filter }));
-      console.log(isNothingFind);
     }
     if (campers.length === 0 && Object.keys(filter).length === 0) {
       dispatch(getCampers({}));
