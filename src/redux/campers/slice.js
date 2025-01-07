@@ -24,7 +24,7 @@ const campersSlice = createSlice({
   initialState,
   reducers: {
     setPage(state, action) {
-     state.page = action.payload;
+      state.page = action.payload;
     },
     setFavorite(state, action) {
       state.isFavorite.push(action.payload);
@@ -37,8 +37,7 @@ const campersSlice = createSlice({
     },
     clearItems(state, action) {
       state.items = [];
-     },
-    
+    },
   },
 
   extraReducers: (builder) => {
@@ -49,10 +48,7 @@ const campersSlice = createSlice({
         state.items.push(...payload.items);
         if (state.total !== payload.total) {
           state.total = payload.total;
-          
         }
-       
-       
       })
       .addCase(getCampers.pending, handlePending)
       .addCase(getCampers.rejected, handleRejected);

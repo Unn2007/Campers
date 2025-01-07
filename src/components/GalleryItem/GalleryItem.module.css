@@ -1,8 +1,8 @@
 .image {
-    width: 292px;
-    height: 312px;
-    display: block;
-    border-radius: 10px;
-    border-color: transparent;
-    object-fit: cover;
+  width: 292px;
+  height: 312px;
+  display: block;
+  border-radius: 10px;
+  border-color: transparent;
+  object-fit: cover;
 }

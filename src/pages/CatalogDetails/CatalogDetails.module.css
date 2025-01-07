@@ -11,17 +11,13 @@
   font-weight: 600;
   line-height: 1.33;
   color: var(--main);
-
 }
 
 .price {
-  
   font-size: 24px;
   font-weight: 600;
   line-height: 1.33;
- margin-bottom: 28px;
-  
-  
+  margin-bottom: 28px;
 }
 
 .reviewsLocation {
@@ -50,7 +46,6 @@
   padding-bottom: 4px;
   font-size: 16px;
   color: var(--text);
-  
 }
 
 .linkList {
@@ -62,12 +57,11 @@
 .linkListItem {
   width: 85px;
   padding-bottom: 24px;
-  
-  
-font-size: 20px;
-font-weight: 600;
-line-height: 1.2;
-color:var(--main);
+
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--main);
 }
 
 .active {
@@ -81,33 +75,27 @@ color:var(--main);
 .techDetails {
   max-width: 631px;
   padding: 44px 52px;
-  
 }
 
 .formHeader {
-  
-font-size: 20px;
-font-weight: 600;
-line-height: 1.2;
-margin-bottom: 8px;
-
-
-} 
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
 
 .formText {
- margin-bottom: 24px;
-font-size: 16px;
-color: var(--gray);
-
+  margin-bottom: 24px;
+  font-size: 16px;
+  color: var(--gray);
 }
 
 .wrapper {
   display: flex;
   column-gap: 40px;
-  
 }
 
-.form{
+.form {
   width: 641px;
   padding: 44px 57px;
 }

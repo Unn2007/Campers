@@ -8,17 +8,8 @@ import { EquipmentList } from "../../components/EquipmentList/EquipmentList.jsx"
 import css from "./CamperItem.module.css";
 
 export const CamperItem = ({ data }) => {
-  const {
-    id,
-    gallery,
-    name,
-    price,
-    rating,
-    reviews,
-    location,
-    description,
-    
-  } = data;
+  const { id, gallery, name, price, rating, reviews, location, description } =
+    data;
   const favoriteCampers = useSelector(selectIsFavorite);
   let isFavorite = favoriteCampers.includes(id);
   const imageLink = gallery[0].thumb;
@@ -76,12 +67,11 @@ export const CamperItem = ({ data }) => {
         </div>
         <p className={css.description}>{`${description}`}</p>
         <EquipmentList
-            item={data}
-            className={css.equipment}
-            classNameIcon={css.equipmentIcon}
-            classNameList={css.equipmentList}
-          />
-        
+          item={data}
+          className={css.equipment}
+          classNameIcon={css.equipmentIcon}
+          classNameList={css.equipmentList}
+        />
 
         <PrimaryButton handleClick={buttonClick}>Show more</PrimaryButton>
       </div>

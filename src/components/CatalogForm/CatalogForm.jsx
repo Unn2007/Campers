@@ -5,7 +5,7 @@ import { setFilters } from "../../redux/filters/slice.js";
 import { setPage, clearItems } from "../../redux/campers/slice.js";
 import { Icon } from "../../components/Icon/Icon.jsx";
 import { VehicleEquipmentList } from "../../components/VehicleEquipmentList/VehicleEquipmentList.jsx";
-import {FormVariantsList} from "../../components/FormVariantsList/FormVariantsList.jsx"
+import { FormVariantsList } from "../../components/FormVariantsList/FormVariantsList.jsx";
 import css from "./CatalogForm.module.css";
 import * as Yup from "yup";
 
@@ -84,22 +84,21 @@ export const CatalogForm = () => {
         <div className={css.formContainer}>
           <h3 className={css.filtersHeader}>Vehicle type</h3>
           <div className={css.filterWrapper}>
-            
             <FormVariantsList
-            items={["alcove","van","fullyIntegrated"]}
-            className={css.equipmentLabel}
-            classNameList={css.filterWrapper}
-            classNameCheckBox={css.checkbox}
-          />
+              items={["alcove", "van", "fullyIntegrated"]}
+              className={css.equipmentLabel}
+              classNameList={css.filterWrapper}
+              classNameCheckBox={css.checkbox}
+            />
           </div>
         </div>
         <div className={css.buttonContainer}>
-        <button type="submit" className={css.button}>
-          Search
-        </button>
-        <button type="reset" className={css.button}>
-           Clear
-        </button>
+          <button type="submit" className={css.button}>
+            Search
+          </button>
+          <button type="reset" className={css.button}>
+            Clear
+          </button>
         </div>
       </Form>
     </Formik>
@@ -209,8 +208,8 @@ export const CatalogForm = () => {
 </div> */
 }
 
-
-{/* <label htmlFor={alcoveId} className={css.equipmentLabel}>
+{
+  /* <label htmlFor={alcoveId} className={css.equipmentLabel}>
               <Icon width={32} height={32} href="icon-alcove"></Icon>
               <p>Alcove</p>
               <Field
@@ -244,4 +243,5 @@ export const CatalogForm = () => {
                 value="fullyIntegrated"
                 className={css.checkbox}
               />
-            </label> */}
+            </label> */
+}

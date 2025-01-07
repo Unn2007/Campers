@@ -1,5 +1,5 @@
 import { Icon } from "../Icon/Icon.jsx";
-import css from './EquipmentItem.module.css'
+import css from "./EquipmentItem.module.css";
 
 export const EquipmentItem = ({
   name,
